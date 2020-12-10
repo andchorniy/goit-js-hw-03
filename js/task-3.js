@@ -1,20 +1,43 @@
-const findLongestWord = function (string) {
-    const array = string.split(' ');
-    let longestWorld = array[0];
-    for (const item  of array) {
-        if (longestWorld.length < item.length) {
-            longestWorld = item;
-        }
+const findBestEmployee = function(employees) {
+  // твой код
+    const employeeNames = Object.keys(employees);
+    let bestEmployee = employeeNames[0];
+
+    for (const key of employeeNames) {
         
+        if (employees[key] > employees[bestEmployee]) {
+            bestEmployee = key;
+        }
     }
-    return longestWorld;
+    return `${bestEmployee}:${employees[bestEmployee]}`;
+    
 };
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
-console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
+console.log(
+  findBestEmployee({
+    ann: 29,
+    david: 35,
+    helen: 1,
+    lorence: 99,
+  }),
+); // lorence
 
-console.log(findLongestWord('Google do a roll')); // 'Google'
+console.log(
+  findBestEmployee({
+    poly: 12,
+    mango: 17,
+    ajax: 4,
+  }),
+); // mango
 
-console.log(findLongestWord('May the force be with you')); // 'force'
+console.log(
+  findBestEmployee({
+    lux: 147,
+    david: 21,
+    kiwi: 19,
+    chelsy: 38,
+  }),
+); // lux
