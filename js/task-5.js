@@ -9,7 +9,7 @@ const getAllPropValues = function(arr, prop) {
   // твой код
     let arrProp = [];
     for (const product of arr) {
-        if (product[prop] !== undefined) {
+        if (product[prop]) {
             arrProp.push(product[prop]);
         }
     }
